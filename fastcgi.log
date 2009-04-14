@@ -1,0 +1,760 @@
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+GET  | Status: 404 | Params: {}
+GET  | Status: 404 | Params: {}
+GET  | Status: 404 | Params: {}
+GET  | Status: 404 | Params: {}
+GET  | Status: 404 | Params: {}
+GET  | Status: 500 | Params: {:format=>"html"}
+undefined method `html' for #<Sinatra::EventContext:0xb797f4e8>:
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+hi
+GET  | Status: 500 | Params: {:format=>"html"}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:11
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+hi
+GET  | Status: 500 | Params: {:format=>"html", :hi=>nil}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:11
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+GET  | Status: 500 | Params: {:format=>"html", :hi=>nil}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+GET  | Status: 500 | Params: {:format=>"html", :hi=>nil}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+GET  | Status: 500 | Params: {:format=>"html", :hi=>"hi"}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+GET  | Status: 500 | Params: {:format=>"html", :hi=>"hi"}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 404 | Params: {:ticket=>"hi"}
+GET  | Status: 500 | Params: {:format=>"html", :hi=>"hi"}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 404 | Params: {:ticket=>"hi"}
+GET  | Status: 404 | Params: {:hi=>"hi"}
+POST  | Status: 500 | Params: {:format=>"html", :ticket=>"hi"}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:format=>"html", :ticket=>"hi"}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:format=>"html", :ticket=>"hi"}
+undefined method `var_dump' for #<Sinatra::EventContext:0xb7aee4c8>:
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:format=>"html", :ticket=>"hi"}
+undefined method `debug' for #<Sinatra::EventContext:0xb7a9498c>:
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+formathtmltickethi
+POST  | Status: 500 | Params: {:format=>"html", :ticket=>"hi"}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:11
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+formathtmltickethimore
+POST  | Status: 500 | Params: {:format=>"html", :ticket=>"hi", :more=>nil}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:11
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+formathtmltickethimore
+POST  | Status: 500 | Params: {:format=>"html", :ticket=>"hi", :more=>nil}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:11
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+GET  | Status: 404 | Params: {:hi=>"hi"}
+formathtmltickethimore
+POST  | Status: 500 | Params: {:format=>"html", :ticket=>"hi", :more=>nil}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:11
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+nil
+POST  | Status: 500 | Params: {:format=>"html", :ticket=>"hi", :more=>nil}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:11
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+nil
+POST  | Status: 200 | Params: {:format=>"html", :ticket=>"hi", :more=>nil}
+nil
+POST  | Status: 500 | Params: {:format=>"html", :ticket=>"hi", :more=>nil}
+can't convert nil into String:
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `initialize'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `new'
+	/usr/local/lib/ruby/gems/1.8/gems/json-1.1.3/lib/json/common.rb:122:in `parse'
+	./test.rb:11
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+nil
+POST  | Status: 200 | Params: {:format=>"html", :ticket=>"hi", :more=>nil}
+nil
+POST  | Status: 200 | Params: {:format=>"html", :ticket=>"hi", :more=>nil}
+nil
+POST  | Status: 200 | Params: {:format=>"html", :ticket=>"hi", :more=>nil}
+POST  | Status: 404 | Params: {:ticket=>"hi", :more=>nil}
+POST  | Status: 404 | Params: {:ticket=>"hi", :more=>nil}
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+hi
+POST  | Status: 500 | Params: {:more=>nil, :format=>"html", :ticket=>"hi"}
+undefined local variable or method `ticket' for #<Sinatra::EventContext:0xb7a5c2e4>:
+	./test.rb:10
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 200 | Params: {:more=>nil, :format=>"html", :ticket=>"hi"}
+hi
+POST  | Status: 200 | Params: {:more=>nil, :format=>"html", :ticket=>"hi"}
+hi
+Redirecting to: /
+POST  | Status: 302 | Params: {:more=>nil, :format=>"html", :ticket=>"hi"}
+/home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/loader.rb:21:in `load': no such file to load -- /home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/loader.rb (LoadError)
+	from /home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/loader.rb:21:in `load_files'
+	from /usr/local/lib/ruby/1.8/set.rb:189:in `each'
+	from /usr/local/lib/ruby/1.8/set.rb:189:in `each_key'
+	from /usr/local/lib/ruby/1.8/set.rb:189:in `each'
+	from /home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/loader.rb:19:in `load_files'
+	from /home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/loader.rb:10:in `reload!'
+	from /home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/core_ext/kernel.rb:12:in `silence_warnings'
+	from /home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/loader.rb:8:in `reload!'
+	from /home/keepfli/tesoriere.com/public/test/vendor/sinatra/lib/sinatra/dispatcher.rb:12:in `call'
+	from /usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	from /usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	from /usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	from /usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	from dispatch.fcgi:16:in `start'
+	from ./vendor/sinatra/lib/sinatra.rb:48
+	from dispatch.fcgi:50
+== Sinatra has taken the stage via FastCGI!
+GET  | Status: 404 | Params: {}
+GET  | Status: 200 | Params: {:format=>"html"}
+POST  | Status: 200 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+POST  | Status: 200 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+== Sinatra has taken the stage via FastCGI!
+./dispatch.fcgi:50:in `load': ./test.rb:54: syntax error, unexpected tCONSTANT, expecting kEND (SyntaxError)
+    puts "#{curl_path} -d #{post} -X POST -H "Accept:application/json #{url}"
+                                                    ^	from ./dispatch.fcgi:50
+	from /home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/loader.rb:11:in `load'
+	from /home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/loader.rb:11:in `reload!'
+	from /home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/core_ext/kernel.rb:12:in `silence_warnings'
+	from /home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/loader.rb:8:in `reload!'
+	from /home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:12:in `call'
+	from /usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	from /usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	from /usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	from /usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	from dispatch.fcgi:16:in `start'
+	from ./vendor/sinatra/lib/sinatra.rb:48
+	from dispatch.fcgi:50
+dispatch.fcgi:50:in `load': ./test.rb:54: syntax error, unexpected tCONSTANT, expecting kEND (SyntaxError)
+    puts "#{curl_path} -d #{post} -X POST -H "Accept:application/json #{url}"
+                                                    ^	from dispatch.fcgi:50
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+hello
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7a28fe8>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb79ed038>:
+	./test.rb:28:in `initialize'
+	./test.rb:27:in `each'
+	./test.rb:27:in `initialize'
+	./test.rb:14:in `new'
+	./test.rb:14
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+== Sinatra has taken the stage via FastCGI!
+hello
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7a24dd0>:
+	./test.rb:28:in `initialize'
+	./test.rb:27:in `each'
+	./test.rb:27:in `initialize'
+	./test.rb:14:in `new'
+	./test.rb:14
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb79e8e84>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+POST  | Status: 500 | Params: {:payload=>"{\"after\":\"16657055602596a4710480d3ab40aefb77a97ef1\",\"ref\":\"refs\\/heads\\/master\",\"commits\":[{\"url\":\"http:\\/\\/github.com\\/scottkf\\/symphony-2\\/commit\\/6a276ef827c23ce592bd21d891cefd5e69365625\",\"removed\":[],\"added\":[],\"timestamp\":\"2009-04-14T08:13:27-07:00\",\"message\":\"added extensions as submodules\",\"modified\":[\".gitmodules\"],\"author\":{\"name\":\"Scott Tesoriere\",\"email\":\"scott@keepflippin.com\"},\"id\":\"6a276ef827c23ce592bd21d891cefd5e69365625\"},{\"url\":\"http:\\/\\/github.com\\/scottkf\\/symphony-2\\/commit\\/16657055602596a4710480d3ab40aefb77a97ef1\",\"removed\":[],\"added\":[],\"timestamp\":\"2009-04-14T08:52:15-07:00\",\"message\":\"added a couple more extensions\",\"modified\":[],\"author\":{\"name\":\"Scott Tesoriere\",\"email\":\"scott@keepflippin.com\"},\"id\":\"16657055602596a4710480d3ab40aefb77a97ef1\"}],\"repository\":{\"owner\":{\"name\":\"scottkf\",\"email\":\"scott@keepflippin.com\"},\"description\":\"This is the official Symphony 2 repository.\",\"watchers\":1,\"name\":\"symphony-2\",\"private\":false,\"forks\":0,\"url\":\"http:\\/\\/github.com\\/scottkf\\/symphony-2\",\"fork\":true,\"homepage\":\"http:\\/\\/symphony21.com\"},\"before\":\"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb79f0e2c>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:payload=>"{\"after\":\"16657055602596a4710480d3ab40aefb77a97ef1\",\"ref\":\"refs\\/heads\\/master\",\"commits\":[{\"url\":\"http:\\/\\/github.com\\/scottkf\\/symphony-2\\/commit\\/6a276ef827c23ce592bd21d891cefd5e69365625\",\"removed\":[],\"added\":[],\"timestamp\":\"2009-04-14T08:13:27-07:00\",\"message\":\"added extensions as submodules\",\"modified\":[\".gitmodules\"],\"author\":{\"name\":\"Scott Tesoriere\",\"email\":\"scott@keepflippin.com\"},\"id\":\"6a276ef827c23ce592bd21d891cefd5e69365625\"},{\"url\":\"http:\\/\\/github.com\\/scottkf\\/symphony-2\\/commit\\/16657055602596a4710480d3ab40aefb77a97ef1\",\"removed\":[],\"added\":[],\"timestamp\":\"2009-04-14T08:52:15-07:00\",\"message\":\"added a couple more extensions\",\"modified\":[],\"author\":{\"name\":\"Scott Tesoriere\",\"email\":\"scott@keepflippin.com\"},\"id\":\"16657055602596a4710480d3ab40aefb77a97ef1\"}],\"repository\":{\"owner\":{\"name\":\"scottkf\",\"email\":\"scott@keepflippin.com\"},\"description\":\"This is the official Symphony 2 repository.\",\"watchers\":1,\"name\":\"symphony-2\",\"private\":false,\"forks\":0,\"url\":\"http:\\/\\/github.com\\/scottkf\\/symphony-2\",\"fork\":true,\"homepage\":\"http:\\/\\/symphony21.com\"},\"before\":\"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb79b4ecc>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+POST  | Status: 500 | Params: {:payload=>"{\"after\":\"16657055602596a4710480d3ab40aefb77a97ef1\",\"ref\":\"refs\\/heads\\/master\",\"commits\":[{\"url\":\"http:\\/\\/github.com\\/scottkf\\/symphony-2\\/commit\\/6a276ef827c23ce592bd21d891cefd5e69365625\",\"removed\":[],\"added\":[],\"timestamp\":\"2009-04-14T08:13:27-07:00\",\"message\":\"added extensions as submodules\",\"modified\":[\".gitmodules\"],\"author\":{\"name\":\"Scott Tesoriere\",\"email\":\"scott@keepflippin.com\"},\"id\":\"6a276ef827c23ce592bd21d891cefd5e69365625\"},{\"url\":\"http:\\/\\/github.com\\/scottkf\\/symphony-2\\/commit\\/16657055602596a4710480d3ab40aefb77a97ef1\",\"removed\":[],\"added\":[],\"timestamp\":\"2009-04-14T08:52:15-07:00\",\"message\":\"added a couple more extensions\",\"modified\":[],\"author\":{\"name\":\"Scott Tesoriere\",\"email\":\"scott@keepflippin.com\"},\"id\":\"16657055602596a4710480d3ab40aefb77a97ef1\"}],\"repository\":{\"owner\":{\"name\":\"scottkf\",\"email\":\"scott@keepflippin.com\"},\"description\":\"This is the official Symphony 2 repository.\",\"watchers\":1,\"name\":\"symphony-2\",\"private\":false,\"forks\":0,\"url\":\"http:\\/\\/github.com\\/scottkf\\/symphony-2\",\"fork\":true,\"homepage\":\"http:\\/\\/symphony21.com\"},\"before\":\"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7abce00>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7a80ef0>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+== Sinatra has taken the stage via FastCGI!
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7a64e30>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+== Sinatra has taken the stage via FastCGI!
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7a46e30>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7a0b024>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+== Sinatra has taken the stage via FastCGI!
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7a65d44>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7a29f10>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb79fe914>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb79d32f0>:
+	./test.rb:27:in `initialize'
+	./test.rb:26:in `each'
+	./test.rb:26:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7a72ae4>:
+	./test.rb:28:in `initialize'
+	./test.rb:27:in `each'
+	./test.rb:27:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+POST  | Status: 500 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+undefined method `first' for #<Hash:0xb7a368dc>:
+	./test.rb:28:in `initialize'
+	./test.rb:27:in `each'
+	./test.rb:27:in `initialize'
+	./test.rb:13:in `new'
+	./test.rb:13
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `instance_eval'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:94:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:124:in `run_safely'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/event.rb:87:in `attend'
+	/home/keepfli/tesoriere.com/activeCollab/github-hook/vendor/sinatra/lib/sinatra/dispatcher.rb:21:in `call'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:54:in `serve'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:10:in `run'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `each'
+	/usr/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/handler/fastcgi.rb:9:in `run'
+	dispatch.fcgi:16:in `start'
+	./vendor/sinatra/lib/sinatra.rb:48
+	dispatch.fcgi:50
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+GET  | Status: 200 | Params: {:format=>"html"}
+POST  | Status: 200 | Params: {:payload=>"{\"after\": \"16657055602596a4710480d3ab40aefb77a97ef1\", \"ref\": \"refs/heads/master\", \"commits\": [{\"url\": \"http://github.com/scottkf/symphony-2/commit/6a276ef827c23ce592bd21d891cefd5e69365625\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:13:27-07:00\", \"message\": \"added extensions as submodules\", \"modified\": [\".gitmodules\"], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"6a276ef827c23ce592bd21d891cefd5e69365625\"}, {\"url\": \"http://github.com/scottkf/symphony-2/commit/16657055602596a4710480d3ab40aefb77a97ef1\", \"removed\": [], \"added\": [], \"timestamp\": \"2009-04-14T08:52:15-07:00\", \"message\": \"added a couple more extensions\", \"modified\": [], \"author\": {\"name\": \"Scott Tesoriere\", \"email\": \"scott@keepflippin.com\"}, \"id\": \"16657055602596a4710480d3ab40aefb77a97ef1\"}], \"repository\": {\"owner\": {\"name\": \"scottkf\", \"email\": \"scott@keepflippin.com\"}, \"description\": \"This is the official Symphony 2 repository.\", \"watchers\": 1, \"name\": \"symphony-2\", \"private\": false, \"forks\": 0, \"url\": \"http://github.com/scottkf/symphony-2\", \"fork\": true, \"homepage\": \"http://symphony21.com\"}, \"before\": \"bf2ed6426c6ddcdccef9e2050132959cae5a7ee4\"}", :format=>"html"}
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!
+== Sinatra has taken the stage via FastCGI!

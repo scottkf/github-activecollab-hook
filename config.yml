@@ -1,0 +1,3 @@
+token: "22-bJlJ1ZBR4pZ1qTtfcYpR5lae8LkTZFu1eGz6u2Mm"
+curl: "/usr/bin/curl"
+submit_url: "http://project.tesoriere.com/projects/5/tickets/add"
