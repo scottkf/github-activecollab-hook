@@ -2,7 +2,6 @@
 
 require 'rubygems'
 require 'vendor/sinatra/lib/sinatra.rb'
-#require 'sinatra'
 
 module Sinatra
   class Server
