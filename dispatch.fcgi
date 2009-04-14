@@ -47,4 +47,4 @@ module Rack
   end
 end
 
-load './test.rb'
+load './github-ac.rb'
