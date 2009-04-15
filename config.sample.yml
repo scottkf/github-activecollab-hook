@@ -1,3 +1,0 @@
-token: "<your token">
-curl: "/usr/bin/curl"
-submit_url: "<submit url, currently for tickets /projects/<num>/tickets/add"
