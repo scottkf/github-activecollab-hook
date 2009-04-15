@@ -4,5 +4,10 @@ token:
 submit_url:
 # type must be singular, type is of discussion/checklist/page/ticket (where you want it to show up in ac)
 type:ticket
+# if you're using a ticket, what id's to assign the ticket to, as an array
+assignees:
+    - 22
+# if you're using a ticket, what id's to assign the ticket to
+responsible:22
 # category is an id if you want it to be categorized
 category:185
