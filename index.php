@@ -18,7 +18,7 @@ class GithubActiveCollab {
 
 	}
 	
-	function _post($url, $header, $data) {
+	function _post($url, $data, $header = 'Accept: application/json') {
 		$options = array(
 			CURLOPT_RETURNTRANSFER 	=> true,
 			CURLOPT_HEADER			=> false,
@@ -34,15 +34,13 @@ class GithubActiveCollab {
 		$curl = curl_init($url);
 		curl_setopt_array($curl, $options);
 		$content = curl_exec($curl);
-		if (!$errno = curl_errno($curl)) {
+		if ($errno = curl_errno($curl)) {
+			$errmsg = curl_error($curl);
+			echo $errno.' '.$errmsg."\n";
 		}
-		$errmsg = curl_error($curl);
-		echo $errno.' '.$errmsg."\n";
-		echo $data; 
-		$response = curl_getinfo($curl);
+		//$response = curl_getinfo($curl);
 		curl_close($curl);
-		echo $content;
-
+		return $content;
 
 	}
 	
@@ -50,14 +48,21 @@ class GithubActiveCollab {
 	function process_commit($commit) {
 
 		$message = $commit['message'];
-		$files = implode(", ",$commit['removed']) . implode(", ",$commit['added']) . implode(", ",$commit['modified']);
+		$files = "Removed:\n\t".implode(", ",$commit['removed']) ."\nAdded\n\t". implode(", ",$commit['added']) ."\nModified\n\t". implode(", ",$commit['modified']);
 
 	    $url  = $this->config['submit_url'].'/'.$this->config['type'].'s/add?token='.$this->config['token'];
-		$post = 'submitted=submitted&'.$this->config['type'].'[name]='.urlencode($message).'+|+'.$commit['id'].' by '.urlencode($commit['author']['name']).'&'.$this->config['type'].'[body]='.urlencode('Files: '.$files);
-		$curl = $this->config['curl'].' --insecure --silent -d '.$post.' -X POST -H "Accept:application/json" '.$url;
-		$this->_post($url, 'Accept: application/json', $post);
-		// echo $curl;
-	    //echo system($curl);
+		$post = 'submitted=submitted&'.
+				$this->config['type'].'[name]='.urlencode($message).'+|+'.$commit['id'].' by '.urlencode($commit['author']['name']).'&'.
+				$this->config['type'].( $this->config['type'] != 'discussion' ? '[body]' : '[message]').'='.urlencode($commit['url'])."\n".urlencode("Files:\n".$files).'&'.
+				$this->config['type'].'[parent_id]='.$this->config['category'];
+		//$curl = $this->config['curl'].' --insecure --silent -d '.$post.' -X POST -H "Accept:application/json" '.$url;
+		$response = json_decode(stripslashes($this->_post($url, $post)), true);
+
+		if ($this->config['type'] == 'ticket' || $this->config['type'] == 'checklist') {
+		 	$complete_url = $this->config['submit_url'].'/objects/'.$response['id'].'/complete?token='.$this->config['token'];
+		 	$this->_post($complete_url, 'submitted=submitted');
+		}
+
 	}
 	
 		
@@ -65,7 +70,7 @@ class GithubActiveCollab {
 
 if (count($_POST) <= 0)
 	die ('Hi!');
-	
+
 $ob_file = fopen('development.log', 'a');
 ob_start();
 
