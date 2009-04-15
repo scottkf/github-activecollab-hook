@@ -1,0 +1,5 @@
+<FilesMatch "\.(htaccess|yml)$">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
+
