@@ -48,12 +48,12 @@ class GithubActiveCollab {
 	function process_commit($commit) {
 
 		$message = $commit['message'];
-		$files = "Removed:\n\t".implode(", ",$commit['removed']) ."\nAdded\n\t". implode(", ",$commit['added']) ."\nModified\n\t". implode(", ",$commit['modified']);
+		$files = "<b>Removed</b>:\n\t".implode(", ",$commit['removed']) ."\n<b>Added</b>\n\t". implode(", ",$commit['added']) ."\n<b>Modified</b>\n\t". implode(", ",$commit['modified']);
 
 	    $url  = $this->config['submit_url'].'/'.$this->config['type'].'s/add?token='.$this->config['token'];
 		$post = 'submitted=submitted&'.
 				$this->config['type'].'[name]='.urlencode($message).'+|+'.$commit['id'].' by '.urlencode($commit['author']['name']).'&'.
-				$this->config['type'].( $this->config['type'] != 'discussion' ? '[body]' : '[message]').'='.urlencode($commit['url'])."\n".urlencode("Files:\n".$files).'&'.
+				$this->config['type'].( $this->config['type'] != 'discussion' ? '[body]' : '[message]').'='.urlencode($commit['url'])."\n".urlencode("<b>Files:</b>\n".$files).'&'.
 				$this->config['type'].'[parent_id]='.$this->config['category'];
 		//$curl = $this->config['curl'].' --insecure --silent -d '.$post.' -X POST -H "Accept:application/json" '.$url;
 		$response = json_decode(stripslashes($this->_post($url, $post)), true);
