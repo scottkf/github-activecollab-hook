@@ -4,13 +4,14 @@ require 'rubygems'
 require 'json'
 require 'vendor/sinatra/lib/sinatra.rb'
 require 'yaml'
-require 'cgi'
+
 
 get '' do
 end
 
 post '' do
-  GithubActiveCollab.new(params[:payload])
+  payload = JSON.parse(params[:payload])
+  GithubActiveCollab.new(payload)
 end
 
 
@@ -20,11 +21,10 @@ class GithubActiveCollab
   
   def initialize(payload)
     config = YAML.load_file('config.yml')
-    
-    payload = JSON.parse(payload)
 
-    payload["commits"].each do |c|
-      #process_commit(c.first, c.last, payload['before'], config['submit_url'], config['curl'], config['token'])
+    
+    payload['commits'].each do |c|
+      process_commit('1', '2', payload['before'], config['submit_url'], config['curl'], config['token'])
     end
     
   end
@@ -53,6 +53,7 @@ class GithubActiveCollab
     post = "submitted=submitted&ticket[name]=#{commit}&ticket[body]=#{message}#{files}"
     curl = "#{curl_path} -d #{post} -X POST -H \"Accept:application/json\" #{url}"
     puts "#{curl}"
+    #`#{curl}`
     # puts `#{curl}`
     # # for each found bugzid, submit the files to fogbugz.
     # # this will set the sRepo to "github-<repo>", which will be used above
