@@ -24,7 +24,7 @@ class GithubActiveCollab {
 			$this->process_commit($commit);
 		}
 		
-		print_r($this->get_people());
+		// print_r($this->get_people());
 
 	}
 	
@@ -54,10 +54,10 @@ class GithubActiveCollab {
 
 	}
 
-	function get_people() {
-		$url = $this->config['submit_url'].'/people?token='.$this->config['token'];
-		return $this->_request($url, '', 0);
-	}
+	// function get_people() {
+	// 	$url = $this->config['submit_url'].'/people?token='.$this->config['token'];
+	// 	return $this->_request($url, '', 0);
+	// }
 
 	function process_commit($commit) {
 		// need to clean this up to it constructs automatically off of an array
