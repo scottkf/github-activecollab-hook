@@ -18,16 +18,18 @@ class GithubActiveCollab {
 		foreach ($res['commits'] as &$commit) {
 			$this->process_commit($commit);
 		}
+		
+		print_r($this->get_people());
 
 	}
 	
-	function _post($url, $data, $header = 'Accept: application/json') {
+	function _req($url, $data, $method = 1, $header = 'Accept: application/json') {
 		$options = array(
 			CURLOPT_RETURNTRANSFER 	=> true,
 			CURLOPT_HEADER			=> false,
 			CURLOPT_CONNECTTIMEOUT 	=> 120,
 	        CURLOPT_TIMEOUT        	=> 120,
-			CURLOPT_POST			=> 1,
+			CURLOPT_POST			=> $method,
 			CURLOPT_POSTFIELDS		=> $data,
 			CURLOPT_SSL_VERIFYHOST 	=> 0,
 	        CURLOPT_SSL_VERIFYPEER	=> false,
@@ -43,8 +45,13 @@ class GithubActiveCollab {
 		}
 		//$response = curl_getinfo($curl);
 		curl_close($curl);
-		return $content;
+		return json_decode(stripslashes($content),true);
 
+	}
+
+	function get_people() {
+		$url = $this->config['submit_url'].'/people?token='.$this->config['token'];
+		return $this->_req($url, '', 0);
 	}
 
 	function process_commit($commit) {
@@ -53,6 +60,7 @@ class GithubActiveCollab {
 		$token = $this->config['token'];
 		// this is the user who owns the token (first 2 digits of the token), hackish way to do it now but it works, read below to fix
 		$user = substr($token, 0, 2);
+		$project = $this->config['project'];
 
 		// process this thing looking for a lighthouse like thing
 		$message = $commit['message'];
@@ -60,7 +68,7 @@ class GithubActiveCollab {
 		
 		$files = "<b>Removed</b>:\n\t".implode(", ",$commit['removed']) ."\n<b>Added</b>\n\t". implode(", ",$commit['added']) ."\n<b>Modified</b>\n\t". implode(", ",$commit['modified']);
 
-	    $url  = $this->config['submit_url'].'/'.$type.'s/add?token='.$token;
+	    $url  = $this->config['submit_url'].'/projects/'.$project.'/'.$type.'s/add?token='.$token;
 
 
 		$post = 'submitted=submitted&'.
@@ -74,11 +82,11 @@ class GithubActiveCollab {
 
 
 		// need to implement a real pluralize function above to resolve any idiocy which might occur
-		$response = json_decode(stripslashes($this->_post($url, $post)), true);
+		$response = $this->_req($url, $post);
 		print_r($response);
 		if ($type == 'ticket' || $type == 'checklist') {
-		 	$complete_url = $this->config['submit_url'].'/objects/'.$response['id'].'/complete?token='.$token;
-		 	$this->_post($complete_url, 'submitted=submitted');
+		 	$complete_url = $this->config['submit_url'].'/projects/'.$project.'/objects/'.$response['id'].'/complete?token='.$token;
+		 	$this->_req($complete_url, 'submitted=submitted');
 		}
 
 	}
