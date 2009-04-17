@@ -5,26 +5,32 @@ include ('spyc/spyc.php');
 
 
 class GithubActiveCollab {
-	protected $config;
 
+
+	protected $config;
+	protected $keywords = array(
+		'responsible' => '((\".*\")|(^[^\s]+$))', // anything quoted or, then a single word
+		'tagged' => '((^[^\s]+$)((\,)(^[^\s]+$))*)', // ^-- followed by , and ^--
+		'milestone' => '((\".*\")|next|none)', // anything quote, or next, or none
+		'state' => '(complete|open|star|unstar|subscribe|unsubscribe)' // any of the following
+		);
 
 	function __construct($payload) {
-
 
 		$this->config = Spyc::YAMLLoad('config.yml');
 
 
-		if (!$res = json_decode(stripslashes($payload), true))
-			die('your json was ;(');
+		// if (!$res = json_decode(stripslashes($payload), true))
+		// 	die('your json was ;(');
 
 
 
 
-		foreach ($res['commits'] as &$commit) {
-			$this->process_commit($commit);
-		}
+		// foreach ($res['commits'] as &$commit) {
+		// 	$this->process_commit($commit);
+		// }
 		
-		print_r($this->get_people());
+		//print_r($this->get_people());
 
 	}
 	
@@ -58,6 +64,57 @@ class GithubActiveCollab {
 		$url = $this->config['submit_url'].'/people?token='.$this->config['token'];
 		return $this->_request($url, '', 0);
 	}
+	
+	function parse_commit_message($message) {
+
+		// see if the string is properly formed with proper keywords
+		$match = '/([^\[\]]+)\[\#([0-9]+)\s([^\[\]]+)\]/i'; // anything quoted, anything without a space, or anything a , without spaces
+		$data_match = '/(?<key>'.implode('|',array_keys($this->keywords)).'):(?<data>(\".*\")|(([\w,]+)(\b)*))/i'; // anything quoted, anything without a space, or anything a , without spaces
+		preg_match_all($match,$message,$matches);
+		//print_r($matches);
+
+		// loop over each potential id, ie [#18 ...] [#20 ...]
+		while(list($key,$value) = each($matches[2])) {
+			//print_r( $matches[3][$key]);
+			preg_match_all($data_match,$matches[3][$key],$keywords);
+			//print_r($matches2);
+
+			// loop over each potential keyword, ie [#18 responsible:.. tagged:..]
+			while(list($k,$v) = each($keywords['key'])) {
+//				echo "key$k value$v\n";
+				if (preg_match($this->keywords[$v],$keywords['data'][$k])) {
+					eval('$this->set_'.$v.'($value,"'.str_replace('"','',$keywords['data'][$k]).'");');
+					echo "\n".'messages: '.$matches[1][0].' id:'.$value.' keyword:'.$v.' data:'.$keywords['data'][$k]."\n";
+				}
+			}
+		}
+
+		//$matches[0] is the full match
+		// [1] is the commit msg
+		// [2] is the id
+		// [3] is the keyword
+		// [4] is the keyword's data
+		return $matches[1][0];
+	}
+	
+	function set_tagged($id,$tags) {
+		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'/edit?token='.$this->config['token'];
+		$post = 'submitted=submitted&'.$this->config['type'].'[tags]='.$tags;
+		echo $url." + $post\n";
+		//$this->_request($url,$post);
+	}
+	
+	function set_milestone($id,$milestone) {
+		
+	}
+	
+	function set_responsible($id,$person) {
+		
+	}
+
+	function set_state($id,$state) {
+		
+	}
 
 	function process_commit($commit) {
 		// need to clean this up to it constructs automatically off of an array
@@ -68,7 +125,7 @@ class GithubActiveCollab {
 		$project = $this->config['project'];
 
 		// process this thing looking for a lighthouse like thing
-		$message = $commit['message'];
+		$message = parse_commit_message($commit['message']);
 	
 		
 		$files = "<b>Removed</b>:\n\t".implode(", ",$commit['removed']) ."\n<b>Added</b>\n\t". implode(", ",$commit['added']) ."\n<b>Modified</b>\n\t". implode(", ",$commit['modified']);
