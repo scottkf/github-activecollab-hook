@@ -34,14 +34,14 @@ class GithubActiveCollab {
 
 	}
 	
-	function _request($url, $data, $method = 1, $header = 'Accept: application/json') {
+	function _request($url, $data = '', $method = 1, $header = 'Accept: application/json') {
 		$options = array(
 			CURLOPT_RETURNTRANSFER 	=> true,
 			CURLOPT_HEADER			=> false,
 			CURLOPT_CONNECTTIMEOUT 	=> 120,
 	        CURLOPT_TIMEOUT        	=> 120,
 			CURLOPT_POST			=> $method,
-			CURLOPT_POSTFIELDS		=> $data,
+			CURLOPT_POSTFIELDS		=> 'submitted=submitted&'.$data,
 			CURLOPT_SSL_VERIFYHOST 	=> 0,
 	        CURLOPT_SSL_VERIFYPEER	=> false,
 			CURLOPT_HTTPHEADER 		=> array($header),
@@ -65,6 +65,9 @@ class GithubActiveCollab {
 		return $this->_request($url, '', 0);
 	}
 	
+	
+	// this function returns only the msg without the actions to modify objects (through milestones, states, etc)
+	//   it modifies the objects as it finds them
 	function parse_commit_message($message) {
 
 		// see if the string is properly formed with proper keywords
@@ -99,9 +102,9 @@ class GithubActiveCollab {
 	
 	function set_tagged($id,$tags) {
 		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'/edit?token='.$this->config['token'];
-		$post = 'submitted=submitted&'.$this->config['type'].'[tags]='.$tags;
+		$post = $this->config['type'].'[tags]='.$tags;
 		echo $url." + $post\n";
-		//$this->_request($url,$post);
+		$this->_request($url,$post);
 	}
 	
 	function set_milestone($id,$milestone) {
@@ -115,6 +118,7 @@ class GithubActiveCollab {
 	function set_state($id,$state) {
 		
 	}
+	
 
 	function process_commit($commit) {
 		// need to clean this up to it constructs automatically off of an array
@@ -133,8 +137,7 @@ class GithubActiveCollab {
 	    $url  = $this->config['submit_url'].'/projects/'.$project.'/'.$type.'s/add?token='.$token;
 
 
-		$post = 'submitted=submitted&'.
-				$type.'[name]='.urlencode($message).'+|+'.$commit['id'].' by '.urlencode($commit['author']['name']).'&'.
+		$post = $type.'[name]='.urlencode($message).'+|+'.$commit['id'].' by '.urlencode($commit['author']['name']).'&'.
 				$type.( $this->config['type'] != 'discussion' ? '[body]' : '[message]').'='.urlencode($commit['url'])."\n".urlencode("<b>Files:</b>\n".$files).
 				($this->config['category'] > 0 ? '&'.$type.'[parent_id]='.$this->config['category'] : '').
 				($type == 'ticket' ? '&ticket[assignees][0][]='.$user.'&ticket[assignees][1]='.$user : '');
@@ -148,7 +151,7 @@ class GithubActiveCollab {
 		//print_r($response);
 		if ($type == 'ticket' || $type == 'checklist') {
 		 	$complete_url = $this->config['submit_url'].'/projects/'.$project.'/objects/'.$response['id'].'/complete?token='.$token;
-		 	$this->_request($complete_url, 'submitted=submitted');
+		 	$this->_request($complete_url);
 		}
 
 	}
