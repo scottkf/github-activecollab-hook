@@ -15,6 +15,11 @@ class GithubActiveCollab {
 		'milestone' => '((\".*\")|next|none)', // anything quote, or next, or none
 		'state' => '(complete|open|star|unstar|subscribe|unsubscribe)' // any of the following
 		);
+	// milestones cache
+	protected $milestones = array();
+
+	// objects cache
+	protected $objects = array();
 
 	function __construct($payload) {
 
@@ -34,7 +39,6 @@ class GithubActiveCollab {
 			$this->process_commit($commit);
 		}
 		
-		//print_r($this->get_people());
 
 	}
 	
@@ -49,7 +53,7 @@ class GithubActiveCollab {
 			CURLOPT_SSL_VERIFYHOST 	=> 0,
 	        CURLOPT_SSL_VERIFYPEER	=> false,
 			CURLOPT_HTTPHEADER 		=> array($header),
-	        CURLOPT_VERBOSE       	=> (DEBUG == 1 ? 1 : 0)		
+	        CURLOPT_VERBOSE       	=> (DEBUG == 1 ? 0 : 0)		
 			);
 		$curl = curl_init($url);
 		curl_setopt_array($curl, $options);
@@ -64,17 +68,7 @@ class GithubActiveCollab {
 
 	}
 
-	function get_people() {
-		$url = $this->config['submit_url'].'/people?token='.$this->config['token'];
-		return $this->_request($url, '', 0);
-	}
-	
-	// fetch an object's real id using object id
-	function get_object_id($id) {
-		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'?token='.$this->config['token'];
-		echo "object id original id: $id, fetch url: $url\n";
-		return $this->_request($url, '', 0);
-	}
+
 	
 	
 	// this function returns only the msg without the actions to modify objects (through milestones, states, etc)
@@ -95,9 +89,8 @@ class GithubActiveCollab {
 
 			// loop over each potential keyword, ie [#18 responsible:.. tagged:..]
 			while(list($k,$v) = each($keywords['key'])) {
-//				echo "key$k value$v\n";
 				if (preg_match($this->keywords[$v],$keywords['data'][$k])) {
-					eval('$this->set_'.$v.'($value,"'.str_replace('"','',$keywords['data'][$k]).'");');
+					eval('$this->set_'.$v.'($value,"'.addslashes($keywords['data'][$k]).'");');
 					//echo "\n".'messages: '.$matches[2][0].' id:'.$value.' keyword:'.$v.' data:'.$keywords['data'][$k]."\n";
 				}
 			}
@@ -111,6 +104,36 @@ class GithubActiveCollab {
 		return $matches[1][0];
 	}
 	
+	function get_people() {
+		$url = $this->config['submit_url'].'/people?token='.$this->config['token'];
+		return $this->_request($url, '', 0);
+	}
+	
+	function get_milestones() {
+		// if it isn't cached
+		if (count($this->milestones) > 0)
+			return;
+		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/milestones?token='.$this->config['token'];
+		// cached
+		$this->milestones = $this->_request($url, '', 0);
+		// sort it by ids so we can figure out which id is next
+		foreach ($this->milestones as $k => $v) {
+			$id[$k] = $v['id'];
+		}
+		array_multisort($id, SORT_DESC, $this->milestones);
+		//print_r($this->milestones);	
+	}
+	
+	// fetch an object using an object actual id
+	function get_object($id) {
+		if (count($this->objects[$id]) > 0)
+			return;
+		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'?token='.$this->config['token'];
+		echo "object id original id: $id, fetch url: $url\n";
+		$this->objects[$id] = $this->_request($url, '', 0);
+		return $this->_request($url, '', 0);
+	}
+	
 	function set_tagged($id,$tags) {
 		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'/edit?token='.$this->config['token'];
 		$post = $this->config['type'].'[tags]='.$tags;
@@ -119,20 +142,51 @@ class GithubActiveCollab {
 	}
 	
 	function set_milestone($id,$milestone) {
-		
+		// if milestone is text, find it
+		// if milestone is next, find the next one
+		// if milestone is none, remove it 
+		$this->get_milestones();
+		$this->get_object($id);
+		$milestone_id = 0;
+		switch ($milestone) {
+			case "next":
+				// find the current id, then go to the next array id
+				while (list($k,$v) = each($this->milestones)) {
+					if (!is_array($this->objects[$id])) // if we received an error from the object
+						break;
+					if ($k != 0)
+						if ($v['id'] == $this->objects[$id]['milestone_id'])
+							$milestone_id = $this->milestones[$k-1]['id']; // k-1 because it's setup in desc. order
+				}
+				break;
+			
+			case "none":
+				$milestone_id = 0;
+				break;
+				
+			default: // where we have to find the milestone by it's name
+				foreach ($this->milestones as $v) {
+					if (strstr($milestone, $v['name'])) $milestone_id = $v['id'];
+				}
+			
+		}
+		//print_r($this->milestones);
+		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'/edit?token='.$this->config['token'];
+		$post = $this->config['type'].'[milestone_id]='.$milestone_id;
+		echo 'setting milestone: '.$milestone.' '.$url." + $post\n";
+		//$this->_request($url,$post);
 	}
 	
 	function set_responsible($id,$person) {
-		
+		// implement me
 	}
 
 	function set_state($id,$state) {
 		// need to fetch the item's object id since that's how it works!
-		$value = $this->get_object_id($id);
-		print_r($value);
-		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/objects/'.$value['id'].'/'.$state.'?token='.$this->config['token'];
+		$this->get_object($id);
+		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/objects/'.$this->objects[$id]['id'].'/'.$state.'?token='.$this->config['token'];
 		echo 'setting state: '.$url."\n";
-		$this->_request($url,'');
+		//$this->_request($url,'');
 	}
 	
 
