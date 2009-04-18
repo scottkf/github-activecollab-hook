@@ -1,5 +1,6 @@
 <?php
 
+define("DEBUG", 0);
 
 include ('spyc/spyc.php');
 
@@ -20,6 +21,9 @@ class GithubActiveCollab {
 		$this->config = Spyc::YAMLLoad('config.yml');
 
 
+		if (DEBUG == 1)
+			return;
+
 		if (!$res = json_decode(stripslashes($payload), true))
 			die('your json was ;(');
 		
@@ -30,7 +34,7 @@ class GithubActiveCollab {
 			$this->process_commit($commit);
 		}
 		
-		print_r($this->get_people());
+		//print_r($this->get_people());
 
 	}
 	
@@ -45,7 +49,7 @@ class GithubActiveCollab {
 			CURLOPT_SSL_VERIFYHOST 	=> 0,
 	        CURLOPT_SSL_VERIFYPEER	=> false,
 			CURLOPT_HTTPHEADER 		=> array($header),
-	        CURLOPT_VERBOSE       	=> 1		
+	        CURLOPT_VERBOSE       	=> (DEBUG == 1 ? 1 : 0)		
 			);
 		$curl = curl_init($url);
 		curl_setopt_array($curl, $options);
@@ -65,6 +69,13 @@ class GithubActiveCollab {
 		return $this->_request($url, '', 0);
 	}
 	
+	// fetch an object's real id using object id
+	function get_object_id($id) {
+		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'?token='.$this->config['token'];
+		echo "object id original id: $id, fetch url: $url\n";
+		return $this->_request($url, '', 0);
+	}
+	
 	
 	// this function returns only the msg without the actions to modify objects (through milestones, states, etc)
 	//   it modifies the objects as it finds them
@@ -74,7 +85,7 @@ class GithubActiveCollab {
 		$match = '/([^\[\]]+)(\[\#([0-9]+)\s([^\[\]]+)\])*/i'; // anything quoted, anything without a space, or anything a , without spaces
 		$data_match = '/(?<key>'.implode('|',array_keys($this->keywords)).'):(?<data>(\".*\")|(([\w,]+)(\b)*))/i'; // anything quoted, anything without a space, or anything a , without spaces
 		preg_match_all($match,$message,$matches);
-		print_r($matches)."hi\n";
+		//print_r($matches)."hi\n";
 
 		// loop over each potential id, ie [#18 ...] [#20 ...]
 		while(list($key,$value) = each($matches[3])) {
@@ -87,7 +98,7 @@ class GithubActiveCollab {
 //				echo "key$k value$v\n";
 				if (preg_match($this->keywords[$v],$keywords['data'][$k])) {
 					eval('$this->set_'.$v.'($value,"'.str_replace('"','',$keywords['data'][$k]).'");');
-					echo "\n".'messages: '.$matches[2][0].' id:'.$value.' keyword:'.$v.' data:'.$keywords['data'][$k]."\n";
+					//echo "\n".'messages: '.$matches[2][0].' id:'.$value.' keyword:'.$v.' data:'.$keywords['data'][$k]."\n";
 				}
 			}
 		}
@@ -103,7 +114,7 @@ class GithubActiveCollab {
 	function set_tagged($id,$tags) {
 		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'/edit?token='.$this->config['token'];
 		$post = $this->config['type'].'[tags]='.$tags;
-		echo $url." + $post\n";
+		echo 'setting tags'.$url." + $post\n";
 		$this->_request($url,$post);
 	}
 	
@@ -116,7 +127,12 @@ class GithubActiveCollab {
 	}
 
 	function set_state($id,$state) {
-		
+		// need to fetch the item's object id since that's how it works!
+		$value = $this->get_object_id($id);
+		print_r($value);
+		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/objects/'.$value['id'].'/'.$state.'?token='.$this->config['token'];
+		echo 'setting state: '.$url."\n";
+		$this->_request($url,'');
 	}
 	
 
