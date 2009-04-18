@@ -20,17 +20,17 @@ class GithubActiveCollab {
 		$this->config = Spyc::YAMLLoad('config.yml');
 
 
-		// if (!$res = json_decode(stripslashes($payload), true))
-		// 	die('your json was ;(');
-
-
-
-
-		// foreach ($res['commits'] as &$commit) {
-		// 	$this->process_commit($commit);
-		// }
+		if (!$res = json_decode(stripslashes($payload), true))
+			die('your json was ;(');
 		
-		//print_r($this->get_people());
+		
+		
+		
+		foreach ($res['commits'] as &$commit) {
+			$this->process_commit($commit);
+		}
+		
+		print_r($this->get_people());
 
 	}
 	
@@ -71,15 +71,15 @@ class GithubActiveCollab {
 	function parse_commit_message($message) {
 
 		// see if the string is properly formed with proper keywords
-		$match = '/([^\[\]]+)\[\#([0-9]+)\s([^\[\]]+)\]/i'; // anything quoted, anything without a space, or anything a , without spaces
+		$match = '/([^\[\]]+)(\[\#([0-9]+)\s([^\[\]]+)\])*/i'; // anything quoted, anything without a space, or anything a , without spaces
 		$data_match = '/(?<key>'.implode('|',array_keys($this->keywords)).'):(?<data>(\".*\")|(([\w,]+)(\b)*))/i'; // anything quoted, anything without a space, or anything a , without spaces
 		preg_match_all($match,$message,$matches);
-		//print_r($matches);
+		print_r($matches)."hi\n";
 
 		// loop over each potential id, ie [#18 ...] [#20 ...]
-		while(list($key,$value) = each($matches[2])) {
+		while(list($key,$value) = each($matches[3])) {
 			//print_r( $matches[3][$key]);
-			preg_match_all($data_match,$matches[3][$key],$keywords);
+			preg_match_all($data_match,$matches[4][$key],$keywords);
 			//print_r($matches2);
 
 			// loop over each potential keyword, ie [#18 responsible:.. tagged:..]
@@ -87,7 +87,7 @@ class GithubActiveCollab {
 //				echo "key$k value$v\n";
 				if (preg_match($this->keywords[$v],$keywords['data'][$k])) {
 					eval('$this->set_'.$v.'($value,"'.str_replace('"','',$keywords['data'][$k]).'");');
-					echo "\n".'messages: '.$matches[1][0].' id:'.$value.' keyword:'.$v.' data:'.$keywords['data'][$k]."\n";
+					echo "\n".'messages: '.$matches[2][0].' id:'.$value.' keyword:'.$v.' data:'.$keywords['data'][$k]."\n";
 				}
 			}
 		}
@@ -129,7 +129,7 @@ class GithubActiveCollab {
 		$project = $this->config['project'];
 
 		// process this thing looking for a lighthouse like thing
-		$message = parse_commit_message($commit['message']);
+		$message = $this->parse_commit_message($commit['message']);
 	
 		
 		$files = "<b>Removed</b>:\n\t".implode(", ",$commit['removed']) ."\n<b>Added</b>\n\t". implode(", ",$commit['added']) ."\n<b>Modified</b>\n\t". implode(", ",$commit['modified']);
