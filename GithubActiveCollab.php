@@ -53,7 +53,7 @@ class GithubActiveCollab {
 			CURLOPT_SSL_VERIFYHOST 	=> 0,
 	        CURLOPT_SSL_VERIFYPEER	=> false,
 			CURLOPT_HTTPHEADER 		=> array($header),
-	        CURLOPT_VERBOSE       	=> (DEBUG == 1 ? 0 : 0)		
+	        CURLOPT_VERBOSE       	=> 1		
 			);
 		$curl = curl_init($url);
 		curl_setopt_array($curl, $options);
@@ -64,7 +64,7 @@ class GithubActiveCollab {
 		}
 		//$response = curl_getinfo($curl);
 		curl_close($curl);
-		return json_decode(stripslashes($content),true);
+		return json_decode($content,true);
 
 	}
 
@@ -129,15 +129,13 @@ class GithubActiveCollab {
 		if (count($this->objects[$id]) > 0)
 			return;
 		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'?token='.$this->config['token'];
-		echo "object id original id: $id, fetch url: $url\n";
-		$this->objects[$id] = $this->_request($url, '', 0);
-		return $this->_request($url, '', 0);
+		$this->objects[$id] = $this->_request($url, '', 1);
 	}
 	
 	function set_tagged($id,$tags) {
 		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'/edit?token='.$this->config['token'];
 		$post = $this->config['type'].'[tags]='.$tags;
-		echo 'setting tags'.$url." + $post\n";
+		echo 'setting tags: '.$url." + $post\n";
 		$this->_request($url,$post);
 	}
 	
@@ -174,7 +172,7 @@ class GithubActiveCollab {
 		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/'.$this->config['type'].'s/'.$id.'/edit?token='.$this->config['token'];
 		$post = $this->config['type'].'[milestone_id]='.$milestone_id;
 		echo 'setting milestone: '.$milestone.' '.$url." + $post\n";
-		//$this->_request($url,$post);
+		$this->_request($url,$post);
 	}
 	
 	function set_responsible($id,$person) {
@@ -186,7 +184,7 @@ class GithubActiveCollab {
 		$this->get_object($id);
 		$url  = $this->config['submit_url'].'/projects/'.$this->config['project'].'/objects/'.$this->objects[$id]['id'].'/'.$state.'?token='.$this->config['token'];
 		echo 'setting state: '.$url."\n";
-		//$this->_request($url,'');
+		$this->_request($url,'');
 	}
 	
 
