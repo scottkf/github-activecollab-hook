@@ -29,6 +29,7 @@ class GithubActiveCollab {
 
 		$this->config = $config[$res['repository']['url']];
 		
+		
 		foreach ($res['commits'] as &$commit) {
 			$this->process_commit($commit);
 		}
