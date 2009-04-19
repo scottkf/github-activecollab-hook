@@ -1,7 +1,5 @@
 <?php
 
-define("DEBUG", 0);
-
 include ('spyc/spyc.php');
 
 
@@ -23,17 +21,13 @@ class GithubActiveCollab {
 
 	function __construct($payload) {
 
-		$this->config = Spyc::YAMLLoad('config.yml');
+		$config = Spyc::YAMLLoad('config.yml');
 
-
-		if (DEBUG == 1)
-			return;
 
 		if (!$res = json_decode(stripslashes($payload), true))
 			die('your json was ;(');
-		
-		
-		
+
+		$this->config = $config[$res['repository']['url']];
 		
 		foreach ($res['commits'] as &$commit) {
 			$this->process_commit($commit);

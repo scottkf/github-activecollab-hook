@@ -1,15 +1,17 @@
-# enter your API token, for this to work you have to enable read/write API
-token:
-# url like http://exampleproject.com, your address to AC
-submit_url:
-# the project number in AC which you're working on, like 10
-project:
-# type must be singular, type is of discussion/checklist/page/ticket (where you want it to show up in ac)
-type:ticket
-# if you're using a ticket, what id's to assign the ticket to, as an array
-assignees:
-    - 22
-# if you're using a ticket, what id's to assign the ticket to
-responsible:22
-# category is an id if you want it to be categorized
-category:185
+# url must be http not https://
+http://github.com/<username>/<project>:
+    # enter your API token, for this to work you have to enable read/write API
+    token: <token>
+    # url like http://exampleproject.com, your address to AC
+    submit_url: <address to AC>
+    # the project number in AC which you're working on, like 10
+    project: <project id>
+    # type must be singular, type is of discussion/checklist/page/ticket (where you want it to show up in ac)
+    type:ticket
+    # if you're using a ticket, what id's to assign the ticket to, as an array
+    assignees:
+        - 33
+        # if you're using a ticket, what id's to assign the ticket to
+        responsible:33
+        # category is an id if you want it to be categorized
+        category:232
